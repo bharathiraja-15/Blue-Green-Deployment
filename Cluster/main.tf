@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "ap-south-1"
+  region = "eu-north-1"
 }
 
 resource "aws_vpc" "devopsshack_vpc" {
@@ -108,7 +108,7 @@ resource "aws_eks_node_group" "devopsshack" {
     min_size     = 3
   }
 
-  instance_types = ["t2.large"]
+  instance_types = ["c7i-flex.large"]
 
   remote_access {
     ec2_ssh_key = var.ssh_key_name
